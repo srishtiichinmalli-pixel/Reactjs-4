@@ -1,0 +1,175 @@
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Base Container Styling */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode Theme */
+.app-container.light {
+  background-color: #f4f6f8;
+  color: #000000;
+}
+
+.app-container.light .counter-card {
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.app-container.light .theme-toggle-btn {
+  background-color: #e2e8f0;
+  color: #000000;
+  border: 1px solid #cbd5e1;
+}
+
+/* Dark Mode Theme */
+.app-container.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.app-container.dark .counter-card {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.app-container.dark .theme-toggle-btn {
+  background-color: #2d3748;
+  color: #ffffff;
+  border: 1px solid #4a5568;
+}
+
+/* Header & Toggle */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.theme-indicator {
+  font-size: 1rem;
+}
+
+.theme-toggle-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  opacity: 0.85;
+}
+
+/* Counter Card Layout */
+.counter-card {
+  margin: auto;
+  padding: 2.5rem;
+  border-radius: 12px;
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+}
+
+.counter-card h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+/* Counter Display */
+.counter-display {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(128, 128, 128, 0.05);
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn.increment {
+  background-color: #22c55e;
+  color: #ffffff;
+}
+
+.btn.increment:hover {
+  background-color: #16a34a;
+}
+
+.btn.decrement {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.btn.decrement:hover {
+  background-color: #dc2626;
+}
+
+.btn.reset {
+  background-color: #64748b;
+  color: #ffffff;
+}
+
+.btn.reset:hover {
+  background-color: #475569;
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 480px) {
+  .app-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .counter-card {
+    padding: 1.5rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
